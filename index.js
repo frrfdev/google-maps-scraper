@@ -19,13 +19,14 @@ app.get("/search", async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: "/usr/bin/google-chrome", // Caminho para o Chrome instalado
+      executablePath: "/root/.cache/puppeteer/google-chrome", // Caminho para o Chrome instalado
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
         "--lang=pt-BR", // Define o idioma do navegador como português
       ],
     });
+
 
     const page = await browser.newPage();
 
